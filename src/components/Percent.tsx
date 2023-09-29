@@ -22,7 +22,8 @@ const Persent = () => {
       .map((value) => parseFloat(value) / 10)
       .filter((value) => !isNaN(value))
       .reduce((acc, value) => acc + value, 0);
-    return Math.round(sum.toFixed(2));
+    const superSum: any = sum.toFixed(2);
+    return Math.round(superSum);
   };
 
   const handleClearFields = () => {
@@ -43,7 +44,9 @@ const Persent = () => {
             <h3>Відсоток за критерій</h3>
           </div>
           <div className="main-header__assessment-item">
-            <h3>Сумарний відсоток за урок: {calculateSum()}</h3>
+            <h3>
+              Сумарний відсоток за урок: <span>{calculateSum()}</span>
+            </h3>
           </div>
         </div>
       </div>
@@ -60,8 +63,8 @@ const Persent = () => {
           </div>
           <div className="main-criterion__item">
             <p>
-              Уміння презентувати проект, доводити відхилення від дизайну та
-              інше
+              Вміння презентувати проект, доводити, чому є відхилення від
+              дизайну та інше
             </p>
           </div>
           <div className="main-criterion__item">
@@ -93,7 +96,7 @@ const Persent = () => {
           ))}
         </div>
         <div className="main-criterion__button">
-        <button onClick={handleClearFields}>Сбросить</button>
+          <button onClick={handleClearFields}>Скинути дані</button>
         </div>
       </div>
     </div>
